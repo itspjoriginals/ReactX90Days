@@ -1,0 +1,71 @@
+✅ 1. Virtual DOM (V-DOM)
+💡 Definition:
+The Virtual DOM is a lightweight in-memory representation of the real DOM. React uses it to optimize rendering performance.
+
+🔁 How It Works:
+1. When state or props change, React creates a new Virtual DOM tree.
+
+2. React then compares the new V-DOM with the previous one (using a process called Reconciliation).
+
+3. It calculates the minimal set of changes needed.
+
+4. Then it applies only those specific changes to the actual browser DOM, which is slow to manipulate directly.
+
+🧠 Key Benefits:
+> Faster updates
+> Minimizes direct DOM manipulation
+> Smooth UI performance
+
+
+✅ 2. Reconciliation
+💡 Definition:
+Reconciliation is the process of comparing the old Virtual DOM with the new one and figuring out what has changed.
+
+🔁 Process:
+> React uses Diffing Algorithm (O(n)) to efficiently compare trees.
+
+> It checks:
+
+    > Type of elements
+    > Keys (for list elements)
+    > Changes in props/state
+
+⚙️ Example:
+Before:
+<div><p>Hello</p></div>
+
+After:
+<div><h1>Hello</h1></div>
+
+Note: React will only replace <p> with <h1>, not the entire <div>.
+
+
+✅ 3. Fiber Architecture (React 16+)
+💡 What is Fiber?
+Fiber is the new React rendering engine (from React 16 onwards) that improves the performance and flexibility of reconciliation.
+
+Think of Fiber as a reimplementation of the Virtual DOM with enhancements.
+
+🧠 Why Fiber?
+Before Fiber:
+
+Reconciliation was synchronous and blocking.
+
+UI updates could lag on large components.
+
+With Fiber:
+
+    > React breaks work into small units.
+
+    > It can pause, abort, resume, or prioritize these units.
+
+    > Enables features like Concurrent Mode, Suspense, and time-slicing.
+
+🔧 Technical Insight:
+Each Fiber node represents a unit of work (a React element).
+
+Fiber architecture allows:
+
+    > Scheduling work
+    > Interrupting rendering
+    > Reusing previous computations
