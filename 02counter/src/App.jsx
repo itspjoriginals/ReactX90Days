@@ -2,16 +2,23 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  let [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
+
+  // const addValue = ()=>{
+  //   if(count=='20'){
+  //     setCount(20);
+  //   }
+  //   else{
+  //     setCount(count+1)
+  //   }
+  // }
 
   const addValue = ()=>{
-    if(count=='20'){
-      setCount(20);
-    }
-    else{
-      setCount(count+1)
-    }
+  setCount(count+1)
+  setCount(count+1)
+  setCount(count+1)
+  setCount(count+1)
   }
 
   const removeValue = () =>{
